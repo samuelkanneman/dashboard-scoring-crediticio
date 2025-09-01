@@ -214,9 +214,9 @@ df_filtered = df[df['periodo'].isin(selected_periods)].copy()
 
 # CORRECCIÓN: Usar los valores correctos para filtrar
 if cliente_tipo == "Nuevos":
-    df_filtered = df_filtered[df_filtered['ClienteNuevo'] == 'V']
+    df_filtered = df_filtered[df_filtered['ClienteNuevo'] == '1']
 elif cliente_tipo == "Existente":  # CORREGIDO: cambiado de "Recurrentes" a "Existente"
-    df_filtered = df_filtered[df_filtered['ClienteNuevo'] == 'F']
+    df_filtered = df_filtered[df_filtered['ClienteNuevo'] == '0']
 
 # Aplicar el método de deciles seleccionado
 if usar_deciles_recalculados:
@@ -638,9 +638,8 @@ st.markdown("---")
 st.markdown(
     """
     <div style='text-align: center; color: gray;'>
-        📊 Tablero de Scoring Crediticio | Última actualización: {fecha}<br>
-        Kanneman, Samuel | Especialista de Créditos <br>
-        Gerencia de Créditos. CONMEGA ACE
+        📊 Demo Tablero de Scoring Crediticio | Última actualización: {fecha}<br>
+        Kanneman, Samuel | Especialista de Créditos
     </div>
     """.format(fecha=pd.Timestamp.now().strftime("%Y-%m-%d %H:%M")),
     unsafe_allow_html=True
