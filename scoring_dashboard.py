@@ -260,7 +260,7 @@ mora_pct = round(len(df_filtered[df_filtered['Malo'] == 1]) / total_clientes * 1
 # CORRECCIÓN: Calcular proporción de clientes nuevos vs Existente
 if total_clientes > 0:
     nuevos_count = len(df_filtered[df_filtered['ClienteNuevo'] == 1])
-    existente_count = len(df_filtered[df_filtered['ClienteNuevo'] == 1])  # CORREGIDO: nombre de variable
+    existente_count = len(df_filtered[df_filtered['ClienteNuevo'] == 0])  # CORREGIDO: nombre de variable
     nuevos_pct = round(nuevos_count / total_clientes * 100, 1)
     existente_pct = round(existente_count / total_clientes * 100, 1)  # CORREGIDO: usar existente_count
     
