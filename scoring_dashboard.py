@@ -214,9 +214,9 @@ df_filtered = df[df['periodo'].isin(selected_periods)].copy()
 
 # CORRECCIÓN: Usar los valores correctos para filtrar
 if cliente_tipo == "Nuevos":
-    df_filtered = df_filtered[df_filtered['ClienteNuevo'] == '1']
+    df_filtered = df_filtered[df_filtered['ClienteNuevo'] == 1]
 elif cliente_tipo == "Existente":  # CORREGIDO: cambiado de "Recurrentes" a "Existente"
-    df_filtered = df_filtered[df_filtered['ClienteNuevo'] == '0']
+    df_filtered = df_filtered[df_filtered['ClienteNuevo'] == 0]
 
 # Aplicar el método de deciles seleccionado
 if usar_deciles_recalculados:
@@ -259,8 +259,8 @@ mora_pct = round(len(df_filtered[df_filtered['Malo'] == 1]) / total_clientes * 1
 
 # CORRECCIÓN: Calcular proporción de clientes nuevos vs Existente
 if total_clientes > 0:
-    nuevos_count = len(df_filtered[df_filtered['ClienteNuevo'] == 'V'])
-    existente_count = len(df_filtered[df_filtered['ClienteNuevo'] == 'F'])  # CORREGIDO: nombre de variable
+    nuevos_count = len(df_filtered[df_filtered['ClienteNuevo'] == 1])
+    existente_count = len(df_filtered[df_filtered['ClienteNuevo'] == 1])  # CORREGIDO: nombre de variable
     nuevos_pct = round(nuevos_count / total_clientes * 100, 1)
     existente_pct = round(existente_count / total_clientes * 100, 1)  # CORREGIDO: usar existente_count
     
