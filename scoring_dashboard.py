@@ -148,7 +148,8 @@ st.sidebar.markdown("---")
 
 # SELECCIÓN DE MODELO - Detectar automáticamente las columnas de score numéricas
 numeric_columns = df.select_dtypes(include=[np.number]).columns.tolist()
-score_columns = [col for col in numeric_columns if col not in ['Malo', 'periodo', 'Decil', 'ClienteNuevo', 'NivelRiesgo']]
+vars_excluidas = ['Malo', 'periodo', 'Decil', 'ClienteNuevo', 'NivelRiesgo', 'atrasomax6']
+score_columns = [col for col in numeric_columns if col not in vars_excluidas]
 
 if len(score_columns) > 1:
     selected_score_column = st.sidebar.selectbox(
