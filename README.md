@@ -1,5 +1,7 @@
 # 📊 Tablero de Scoring Crediticio
 
+🌐 **Acceso al Dashboard Online (Demo):** [https://dashboard-scoring-crediticio-demo.streamlit.app/](https://dashboard-scoring-crediticio-demo.streamlit.app/)
+
 Este repositorio contiene una aplicación construida con **Streamlit** diseñada para analizar, comparar y visualizar el rendimiento de diferentes modelos de *Scoring* Crediticio. 
 
 > [!WARNING]
