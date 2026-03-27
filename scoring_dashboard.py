@@ -146,13 +146,9 @@ selected_periods = st.sidebar.multiselect(
 
 st.sidebar.markdown("---")
 
-# SELECCIÓN DE MODELO - Detectar automáticamente las columnas de score
-score_columns = ['ML_Score', 'VZ_score_3t','NS_scoret','SI_Scoret', 'Score_Alt','Nos_Fintech']
-
-# Si no encuentra columnas automáticamente, mostrar todas las numéricas
-if not score_columns:
-    numeric_columns = df.select_dtypes(include=[np.number]).columns.tolist()
-    score_columns = [col for col in numeric_columns if col not in ['Malo', 'periodo', 'Decil', 'ClienteNuevo']]
+# SELECCIÓN DE MODELO - Detectar automáticamente las columnas de score numéricas
+numeric_columns = df.select_dtypes(include=[np.number]).columns.tolist()
+score_columns = [col for col in numeric_columns if col not in ['Malo', 'periodo', 'Decil', 'ClienteNuevo', 'NivelRiesgo']]
 
 if len(score_columns) > 1:
     selected_score_column = st.sidebar.selectbox(
@@ -248,7 +244,7 @@ if st.sidebar.checkbox("🔍 Mostrar información de debug"):
             st.sidebar.text(f"Decil {decil}: {count} ({pct:.1f}%)")
 
 # HEADER
-st.title("📊 Tablero de Scoring Crediticio CA")
+st.title("📊 Tablero de Scoring Crediticio")
 st.markdown("---")
 
 # MÉTRICAS PRINCIPALES
