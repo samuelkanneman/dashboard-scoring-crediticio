@@ -1,4 +1,4 @@
-periodo;atrasomax6;Malo;NivelRiesgo;ClienteNuevo;ML_Score;VZ_score_3t;NS_scoret;SI_Scoret;Score_Alt;Nos_Fintech
+periodo;atrasomax6;Malo;NivelRiesgo;ClienteNuevo;Score_A;Score_B;Score_C;Score_D;Score_E;Score_F
 2024-09;0;0;Bajo;0;574;728;622;557;611;488
 2024-09;0;1;Muy Alto;0;747;331;662;673;464;468
 2024-09;29;1;Alto;0;618;455;417;529;594;590
